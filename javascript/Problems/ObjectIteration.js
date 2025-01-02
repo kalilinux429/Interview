@@ -15,5 +15,7 @@ for(key in obj){
 
 
 //object methods
-console.log(Object.keys(obj))
+console.log(Object.values(obj))
+
+
 
