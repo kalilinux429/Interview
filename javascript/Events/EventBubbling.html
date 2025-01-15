@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Bubbling Example</title>
+        <style>
+            #parent {
+                padding: 20px;
+                background: lightblue;
+            }
+
+            #child {
+                padding: 20px;
+                background: lightcoral;
+            }
+
+            #child2 {
+                padding: 20px;
+                background: lightgreen;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="parent">
+            Parent
+            <div id="child">
+                Child 1
+            </div>
+            <div id="child2">
+                Child 2
+            </div>
+        </div>
+        <script>
+            // Event bubbling example
+            document.getElementById("parent").addEventListener("click", () => {
+                console.log("Parent clicked!");
+            });
+
+            document.getElementById("child").addEventListener("click", () => {
+                console.log("Child 1 clicked!");
+            });
+
+            document.getElementById("child2").addEventListener("click", () => {
+                console.log("Child 2 clicked!");
+            });
+
+            // Prevent bubbling
+            document.getElementById("child").addEventListener("click", (event) => {
+                console.log("Child 1 clicked (bubbling prevented)!");
+                event.stopPropagation(); // Stops event propagation to the parent
+            });
+
+            // Event delegation example
+            document.getElementById("parent").addEventListener("click", (event) => {
+                if (event.target && event.target.id === "child2") {
+                    console.log("Child 2 clicked via delegation!");
+                }
+            });
+
+        </script>
+    </body>
+
+    </html>

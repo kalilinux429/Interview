@@ -6,7 +6,7 @@ if(NaN){
     console.log('failure')
 }
 //outupe==> failure
-
+ //asked in A Zycus
 const nullVar=null;
 console.log(typeof nullVar)//object
 

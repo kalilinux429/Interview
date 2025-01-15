@@ -6,3 +6,4 @@ array.forEach((item)=>{
    array.length=0;//throw 'error'
   }
 })
+//ouput 1 2 3

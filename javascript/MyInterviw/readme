@@ -1,0 +1,155 @@
+Here’s your formatted content for React Redux interview questions and answers: 
+
+---
+
+### **General Notes**
+- Coding must become your passion and core skill.
+- Hard work is always rewarded by the universe, regardless of the situation.
+
+---
+
+### **React Redux Interview Questions**
+
+#### **React Lazy Loading**
+```javascript
+import React, { lazy, Suspense } from 'react';
+
+const Profile = lazy(() => import('./Profile'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Profile />
+    </Suspense>
+  );
+}
+
+export default App;
+```
+
+---
+
+### **React Hooks**
+
+1. **`useEffect` Behavior Without Dependencies**
+   - When `useEffect` is used without any dependency, it will run after every render.
+   - Example:
+     ```javascript
+     useEffect(() => {
+       console.log('This runs after every render');
+     });
+     ```
+
+2. **`useEffect` Behavior With Dependencies**
+   - If an empty dependency array (`[]`) is passed, the `useEffect` will only run once after the component mounts.
+
+---
+
+### **React.js Interview Questions**
+
+1. Fetch API from JSONPlaceholder and handle quantity increment/decrement with a button.
+2. Implement pagination by fetching data from an API.
+3. Create a theme changer using a toggle button.
+4. Write logic for the Fibonacci series.
+5. Explain event delegation and provide an example.
+6. Create a prototype of an object.
+7. **`typeof` Examples:**
+   - `let var; typeof(var); // undefined`
+   - `var nullVar = null; typeof(nullVar); // object`
+8. Create "Add to Cart" functionality with `useState`. Include price and total in the output.
+9. Write logic to check for a palindrome.
+10. Write the Fibonacci series logic.
+
+---
+
+### **Managerial Questions**
+
+1. **What is a retrospective (retro) meeting?**
+   - A meeting where team members review the completed sprint, discuss what went well, and identify areas for improvement.
+   
+2. **Who gives deadlines, and how are tasks managed in the team?**
+   - Deadlines are typically set by managers or product owners. Tasks are assigned based on the sprint plan and tracked using tools like JIRA.
+
+3. **How did you work through the sprint?**
+   - Tasks are completed in iterative cycles, regularly reviewed, and adjusted based on priority.
+
+---
+
+### **React.js Fundamentals**
+
+1. **React Lifecycle Phases**
+   - **Mounting**: `constructor`, `render`, `componentDidMount`.
+   - **Updating**: `shouldComponentUpdate`, `componentDidUpdate`.
+   - **Unmounting**: `componentWillUnmount`.
+   - **Error Handling**: `componentDidCatch`.
+
+2. **Higher Order Components (HOC)**
+   - A function that takes a component and returns a new component. Often used for reusability, such as authentication.
+
+3. **Error Boundaries**
+   - Components that catch JavaScript errors in their child components and display fallback UI.
+
+4. **Synthetic Events**
+   - Cross-browser wrapper for native events such as `onClick`, `onChange`, `onMouseOver`, etc.
+
+5. **Ref in React**
+   - Used to access DOM nodes or elements directly.
+
+6. **Controlled vs. Uncontrolled Components**
+   - **Controlled**: State is managed via `useState`.
+   - **Uncontrolled**: Managed using `useRef`.
+
+---
+
+### **React Concepts**
+
+1. **Immutability of State**
+   - Always create a shallow copy before updating state to avoid mutating it directly.
+
+2. **Prop Drilling**
+   - Passing props through multiple levels of components.  
+   - **Avoidance**: Use Context API or Redux.
+
+3. **React Router DOM**
+   - Provides navigation and routing in React applications.
+
+4. **Pure Components**
+   - Used in class-based components to prevent unnecessary renders.
+
+5. **React.memo**
+   - A higher-order component that prevents unnecessary re-renders.
+
+6. **Styling Techniques**
+   - CSS Modules (`App.module.css`), Styled-components, Inline styles.
+
+---
+
+### **Advanced Topics**
+
+1. **Lazy Loading and Code Splitting**
+   - Example:
+     ```javascript
+     const LazyComponent = React.lazy(() => import('./LazyComponent'));
+     ```
+
+2. **Handling Asynchronous Data**
+   - Use conditional rendering to display a loading spinner or fallback UI while fetching data.
+
+3. **Challenges in React**
+   - State management.
+   - Handling complex forms (e.g., using Formik and Yup).
+   - Creating custom hooks for reusability.
+
+4. **`useEffect` vs. `useLayoutEffect`**
+   - `useEffect`: Runs after painting.
+   - `useLayoutEffect`: Runs before painting; useful for animations.
+
+5. **Optimization Techniques**
+   - Use `React.memo`, Pure Components, optimized state management, code splitting, lazy loading, and proper use of keys.
+
+---
+
+Q.how to get properties of object
+==>
+
+Q>.create add to cart functionlityin react
