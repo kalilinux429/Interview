@@ -1,0 +1,14 @@
+1. how to build pagination
+2. what is importance of pagination
+3. when we have all data in cache wht the use of pagination
+4. what excatly happen in code splitting
+5. suspense
+6. fetch api and show when user type in input box wheather it matchs found or not
+7. filter data according to input and show it in ui
+8. when we catch api response where is it store
+
+https://dummyjson.com/products/category-list 
+ //this json is given
+
+ they share this code in this platform
+ https://codeshare.io/k0oX6V

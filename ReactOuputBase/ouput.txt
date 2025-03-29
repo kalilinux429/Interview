@@ -1,0 +1,186 @@
+**React Output-Based Interview Questions**
+
+### **1. Understanding Closures in setTimeout**
+#### **Question:**
+What will be alerted when clicking the button below?
+
+```jsx
+const [count, setCount] = useState(0);
+
+const handleClick = () => {
+  setTimeout(() => {
+    alert(count);
+  }, 3000);
+};
+
+return (
+  <>
+    <button onClick={handleClick}>Click Me</button>
+  </>
+);
+```
+
+#### **Answer:**
+- When `handleClick` executes, `setTimeout` captures the current value of `count`.
+- Since `count` does not update immediately, the alert will show the **old** value of `count`.
+- If `count` was `0` when clicked, after 3 seconds it will alert `0`, even if the UI has updated.
+
+---
+
+### **2. Adding State Update Before setTimeout**
+#### **Question:**
+What will be the output when clicking the button below?
+
+```jsx
+const [count, setCount] = useState(0);
+
+const handleClick = () => {
+  setCount(count + 1);
+  
+  setTimeout(() => {
+    alert(count);
+  }, 3000);
+};
+
+return (
+  <>
+    <p>{count}</p>
+    <button onClick={handleClick}>Click Me</button>
+  </>
+);
+```
+
+#### **Answer:**
+- The UI will update **immediately**, increasing `count` by `1`.
+- However, `setTimeout` still holds the **old value** of `count`, so it will alert the **previous** state value.
+- If `count` was `0` before clicking, the UI will show `1`, but the alert will still show `0`.
+
+---
+
+### **3. Fixing Stale State in setTimeout**
+#### **Question:**
+How can we ensure that `setTimeout` always alerts the latest `count` value?
+
+#### **Solution 1: Using Functional Updater**
+```jsx
+const handleClick = () => {
+  setCount(prevCount => prevCount + 1);
+  
+  setTimeout(() => {
+    alert(prevCount => prevCount + 1);
+  }, 3000);
+};
+```
+
+✔ This ensures `setTimeout` receives the **updated state value**.
+
+#### **Solution 2: Using useRef**
+```jsx
+const countRef = useRef(0);
+
+useEffect(() => {
+  countRef.current = count;
+}, [count]);
+
+const handleClick = () => {
+  setCount(count + 1);
+  
+  setTimeout(() => {
+    alert(countRef.current);
+  }, 3000);
+};
+```
+
+✔ `useRef` keeps track of the latest `count` without causing re-renders.
+
+#### **Solution 3: Capture Updated Value in setCount**
+```jsx
+const handleClick = () => {
+  setCount(prevCount => {
+    const newCount = prevCount + 1;
+    
+    setTimeout(() => {
+      alert(newCount);
+    }, 3000);
+    
+    return newCount;
+  });
+};
+```
+
+✔ This ensures `setTimeout` gets the updated state value.
+
+---
+
+### **4. Alternative to Using find() in Cart Update**
+#### **Question:**
+How can we rewrite the following function **without using `find()`**?
+
+```jsx
+const addItem = (product) => {
+  const itemInCart = cart.find((item) => item.id === product.id);
+  
+  if (itemInCart) {
+    setCart(cart.map(item =>
+      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+    ));
+  } else {
+    setCart([...cart, { ...product, quantity: 1 }]);
+  }
+};
+```
+
+#### **Alternative Approach (Using reduce)**
+```jsx
+const addItem = (product) => {
+  setCart(prevCart => {
+    let found = false;
+    const newCart = prevCart.map(item => {
+      if (item.id === product.id) {
+        found = true;
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    
+    return found ? newCart : [...newCart, { ...product, quantity: 1 }];
+  });
+};
+```
+✔ This avoids using `find()` while keeping the logic clear and efficient.
+
+---
+
+### **5. Using prevState in setState**
+#### **Question:**
+Why is it important to use `prevState` in state updates?
+
+#### **Example of an Issue Without `prevState`**
+```jsx
+const handleClick = () => {
+  setCount(count + 1);
+  setCount(count + 1);
+};
+```
+**Problem:**
+- Since `count` does not update immediately, both `setCount(count + 1)` calls use the **same old state**, so it only increases by `1` instead of `2`.
+
+#### **Solution Using `prevState`**
+```jsx
+const handleClick = () => {
+  setCount(prevCount => prevCount + 1);
+  setCount(prevCount => prevCount + 1);
+};
+```
+✔ Now, React ensures `prevCount` is updated properly, so `count` increases by `2` as expected.
+
+---
+
+### **Final Takeaways**
+✅ **Closures in JavaScript can cause stale state issues in setTimeout.**  
+✅ **React state updates are asynchronous, so `prevState` should be used when modifying state multiple times.**  
+✅ **Functional updates and `useRef` can prevent common pitfalls in state management.**  
+✅ **`find()` can be replaced using `reduce()` or direct array mapping.**  
+
+Would you like more questions on specific React topics? 🚀
+

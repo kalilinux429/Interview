@@ -1,0 +1,51 @@
+1.[2,4,4,7,7,0,2,3] in this given array you have to remove non duplacte DataTransferItemList
+2.console.log(5-'5')
+3.what is recursion?
+4.what is bubble sort?
+5.what is SSR?
+6.what is code spliting?
+7.How to migrate react application?
+6.what is advantages of react and next js?
+7.diff between react and next js?
+8.what is server side props?
+9.What is context api?how to crate it?
+10.what is diff between useRef, useCallback,useMemo?
+11.what is firebase?
+12.what is git stash?
+13
+
+//
+//managertia round
+==>Cookies are used primarily for **storing small pieces of data** on the client side, often for maintaining **stateful information** between server requests. Since HTTP is stateless, cookies help bridge the gap by remembering data across requests. Let’s break down their key uses:
+
+### 🚀 **Main uses of cookies:**
+
+1. **Authentication (Sessions):**  
+   - Store session tokens after login.  
+   - The server uses this token to identify the user for subsequent requests.  
+   - Example: `session_id=abc123; HttpOnly; Secure;`
+
+2. **Personalization:**  
+   - Save user preferences, like themes or language settings.  
+   - Example: `theme=dark;`
+
+3. **Tracking (Analytics):**  
+   - Track user activity across pages (or even websites, with third-party cookies).  
+   - Used by tools like Google Analytics to gather visitor data.
+
+4. **Cart management (E-commerce):**  
+   - Store temporary product data for users who haven’t logged in.  
+   - Example: `cart_id=xyz456;`
+
+5. **Security:**  
+   - Secure cookies (`Secure` and `HttpOnly` flags) can help prevent XSS attacks by limiting JavaScript’s access to sensitive tokens.
+
+6. **Cross-site requests (CSRF protection):**  
+   - Cookies with `SameSite` attributes (`Strict` or `Lax`) control whether cookies are sent along with cross-site requests.
+
+### ⚡ **Why not use cookies for everything?**  
+- **Limited storage:** Max 4KB of data.  
+- **Security risks:** Vulnerable to attacks if not properly secured (e.g., XSS, CSRF).  
+- **Performance:** Sent with every HTTP request, so large cookies can slow down network requests.
+
+Would you like to dive deeper into cookie security (`HttpOnly`, `SameSite`, etc.)? Let me know! 🍪

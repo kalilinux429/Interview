@@ -1,0 +1,47 @@
+Here’s a list of **similar array and object-based problems** that test your logic, frequency counting, and iteration skills:  
+
+### 🌟 **Array-focused problems:**
+1. **Find all duplicates in an array:**  
+   _Given an array, return all elements that appear more than once._  
+2. **Find the first non-repeating element:**  
+   _Identify the first element in the array that appears only once._  
+3. **Count occurrences of each element:**  
+   _Create an object showing how many times each element appears._  
+4. **Remove duplicates from an array:**  
+   _Return a new array containing only unique elements._  
+5. **Intersection of two arrays:**  
+   _Find elements that appear in both arrays._  
+6. **Union of two arrays:**  
+   _Combine two arrays and remove duplicates._  
+7. **Find missing number in a sequence:**  
+   _Given an array of numbers from 1 to N with one number missing, find the missing number._  
+8. **Find the majority element:**  
+   _Find the element that appears more than ⌊n/2⌋ times in the array._  
+9. **Sort an array of 0s, 1s, and 2s:**  
+   _Sort an array containing only 0, 1, and 2 without using any built-in methods._  
+10. **Check for anagrams:**  
+    _Given two strings, check if they are anagrams (contain the same characters with the same frequency)._  
+
+### 🔥 **Object and Map-based problems:**
+1. **Group elements by frequency:**  
+   _Group elements in an array based on how many times they appear._  
+2. **Find the k most frequent elements:**  
+   _Find the top `k` elements with the highest frequency._  
+3. **Character frequency in a string:**  
+   _Count how many times each character appears in a given string._  
+4. **Longest substring without repeating characters:**  
+   _Find the length of the longest substring without repeating characters._  
+5. **Two sum problem:**  
+   _Given an array and target sum, return indices of the two numbers adding up to the target._  
+6. **Isomorphic strings:**  
+   _Check if two strings can be transformed into each other by mapping characters one-to-one._  
+7. **Word frequency counter:**  
+   _Count how many times each word appears in a sentence or paragraph._  
+8. **Check for palindrome permutations:**  
+   _Check if any permutation of a string can form a palindrome._  
+9. **Count unique pairs with a given difference:**  
+   _Count pairs `(a, b)` such that `a - b` equals a given target._  
+10. **Longest consecutive sequence:**  
+    _Find the length of the longest consecutive elements sequence in an array._
+
+Would you like me to go over the logic of any specific one, or code them up step by step? 🚀

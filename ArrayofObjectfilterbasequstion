@@ -1,0 +1,25 @@
+// const products = [
+//     { name: "Laptop", category: "electronics", price: 1000, quantity: 2 },
+//     { name: "Shirt", category: "clothing", price: 50, quantity: 3 },
+//     { name: "Phone", category: "electronics", price: 500, quantity: 5 },
+//     { name: "Headphones", category: "electronics", price: 200, quantity: 1 },
+//     { name: "Pants", category: "clothing", price: 80, quantity: 2 }
+//   ];
+  
+  
+//   const electronics = products.filter(product => product.category === "electronics");
+//   console.log(electronics)
+
+const products = [
+    { name: "Laptop", category: "electronics", price: 1000, quantity: 2 },
+    { name: "Shirt", category: "clothing", price: 50, quantity: 3 },
+    { name: "Phone", category: "electronics", price: 500, quantity: 5 },
+    { name: "Headphones", category: "electronics", price: 200, quantity: 1 },
+    { name: "Pants", category: "clothing", price: 80, quantity: 2 }
+  ];
+  
+  
+  const electronics = products.filter(product => product.category === "electronics");
+  console.log(electronics)
+  const finalProdict=electronics.reduce((acc,item)=>acc+item.quantity*item.price,0)
+  console.log(finalProdict)

@@ -1,0 +1,16 @@
+
+const data = [
+  { Amount: "4.77", ServiceType: "Service1" },
+  { Amount: "4.77", ServiceType: "Service1" },
+  { Amount: "4.77", ServiceType: "Service2" },
+];
+
+const totalAmount = data
+  .filter(item => item.ServiceType === "Service1")
+  .reduce((sum, item) => sum + parseFloat(item.Amount), 0);
+
+console.log(totalAmount.toFixed(2)); // "9.54"
+//add data accoding to servie type
+
+const array=[2,3,5,,7,10,'a','b','c'];
+//remove string from this array
