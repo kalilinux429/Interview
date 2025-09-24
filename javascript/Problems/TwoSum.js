@@ -1,16 +1,22 @@
+function twoSum(nums, target) {
+    const map = new Map();
+    let i = 0;
 
-function zeroSum(num){ 
-    let left=0;let right=num.length-1;
-    while(left < right){
-      let sum=num[left]-num[right];
-      if(sum === 0){
-        return [num[left],num[right]]
-      }else if(sum>0){
-       right--
-      }else{
-        left++
-      }
+    while (i < nums.length) {
+        const complement = target - nums[i];
+
+        if (map.has(complement)) {
+            return [map.get(complement), i];
+        }
+
+        map.set(nums[i], i);
+        i++;
     }
-    }
-    
-    console.log(zeroSum(arr))
+
+    return []; // No solution found
+}
+
+// Example:
+const nums = [11, 2, 7, 15];
+const target = 9;
+console.log(twoSum(nums, target)); // Output: [1, 2]

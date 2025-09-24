@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Web Component</title>
+</head>
+<body>
+
+  <!-- Using the custom component -->
+  <my-card></my-card>
+  <my-card></my-card>
+
+
+  <script>
+    // Step 1: Create a class that extends HTMLElement
+    class MyCard extends HTMLElement {
+      constructor() {
+        super();
+
+        // Step 2: Attach Shadow DOM
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        // Step 3: Define HTML and CSS inside Shadow DOM
+        shadow.innerHTML = `
+          <style>
+            .card {
+              padding: 10px;
+              margin: 10px;
+              background: #f9f9f9;
+              border: 1px solid #ccc;
+              border-radius: 8px;
+              font-family: Arial;
+            }
+          </style>
+          <div class="card">
+            <h3>Hello!</h3>
+            <p>This is a simple web component.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Step 4: Register the custom element
+    customElements.define('my-card', MyCard);
+  </script>
+</body>
+</html>

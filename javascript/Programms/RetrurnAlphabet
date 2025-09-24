@@ -1,0 +1,16 @@
+const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+                 'u', 'v', 'w', 'x', 'y', 'z'];
+
+ function getAlphabet(...inputs) {
+  return inputs
+    .map(index => {
+      if (index < 0 || index >= 26) return '?'; // fallback for invalid values
+      return alphabet[index];
+    })
+    .join('');
+}
+
+// Example usage:
+console.log(getAlphabet(1, 2));   // ab
+console.log(getAlphabet(0, 25));  // az
+console.log(getAlphabet(24));     // y

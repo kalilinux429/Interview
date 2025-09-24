@@ -88,3 +88,8 @@ function removeFirstSymbol(arr, symbol) {
   const data = ["Ap$ple", "Ban$ana", "Ch$erry", "Gr$ape$"];
   console.log(removeSymbolAtIndex(data, "$", 3));
   
+  //
+
+  const input = ["$Apple", "@Banana", "$@Cherry", "@$Orange"];
+const result = input.map(str => str.replace(/[@$]/g, ''));
+console.log(result);

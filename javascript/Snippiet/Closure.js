@@ -10,3 +10,10 @@ for(var i=1;i<5;i++){
  
    
 }
+
+for (var i = 0; i < 5; i++) {
+    setTimeout(function(i) {
+      console.log(i);
+    }, 10, i); // 👈 passing 'i' directly
+  }
+  
